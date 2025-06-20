@@ -12,7 +12,8 @@ const db = mysql.createPool({
 router.get('/', async (req, res) => {
     try {
         const[summary] = await db.query(`
-            SELECT u.username AS walker, COUNT(wr.rating_id) AS total_rating,
+            SELECT u.username AS walker,
+            COUNT(wr.rating_id) AS total_rating,
                 AVG(wr.rating) AS average_rating
             FROM Users u
             LEFT JOIN WalkRatings wr ON u.user_id = wr.walker_id
