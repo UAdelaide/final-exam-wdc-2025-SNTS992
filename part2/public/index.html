@@ -72,29 +72,30 @@
         };
       },
       methods: {
-        async loadDogs(){
-          try{
+        async loadDogs() {
+          try {
             const res = await fetch('/api/users/dogs');
             if (!res.ok) throw new Error('Failed to load dogs');
             this.dogs = await res.json();
-          } catch (err){
+          } catch (err) {
             console.error(err);
           }
-        }
-        async getDog() {
+        },
+        async getDogPic() {
 
-                    try {
-                        //get a random dog picture
-                        const res = await fetch("https://dog.ceo/api/breeds/image/random");
-                        const data = await res.json();
-                        this.dogImage = data.message;
-                    } catch (err) {
-                        alert("Dog picture fail") // poor handling (bad accessibility)
-                    }
-                }
+          try {
+            //get a random dog picture
+            const res = await fetch("https://dog.ceo/api/breeds/image/random");
+            const data = await res.json();
+            this.dogImage = data.message;
+          } catch (err) {
+            alert("Dog picture fail") // poor handling (bad accessibility)
+          }
+        }
       },
-      mounted(){
+      mounted() {
         this.loadDogs();
+        this.getDogPic()
       }
     }).mount('#app');
   </script>
