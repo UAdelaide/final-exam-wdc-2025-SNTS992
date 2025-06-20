@@ -58,10 +58,9 @@ router.post('/login', async (req, res) => {
       const user = results[0];
 
       if (user.password_hash === password) {
-        // Using sessions here
+        // Using sessions here, getting the information needed
         req.session.user = {
           username: user.username,
-          email: user.email,
           role: user.role
         };
         res.status(200).json({ message: 'Login Successful!' });
