@@ -210,6 +210,7 @@ function login() {
     xmlhttp.setRequestHeader("Content-type", "application/json");
     xmlhttp.send(JSON.stringify(user));
 
+    
 }
 
 function logout() {
