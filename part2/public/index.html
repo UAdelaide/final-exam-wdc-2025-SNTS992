@@ -76,7 +76,8 @@
             const res = await fetch('/api/users/dogs');
             if (!res.ok) throw new Error('Failed to load dogs');
             this.dogs = await res.json();
-
+            const dogsData = await res.json();
+            
             // Random picture for each dog
             const dogWithPics = await Promise.all(dogsData.map(async (dog) => {
               try {
