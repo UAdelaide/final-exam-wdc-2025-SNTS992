@@ -82,7 +82,9 @@
               try {
                 const picRes = await fetch("https://dog.ceo/api/breeds/image/random");
                 const picData = await picRes.json();
-                dog.picture = picData.message; // add picture url
+                dog.picture = picData.message; // add picture link
+              } catch {
+                dog.picture = 
               }
               return dog;
             }));
