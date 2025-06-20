@@ -79,8 +79,10 @@
 
             // Random picture for each dog
             const dogWithPics = await Promise.all(dogsData.map(async (dog) => {
-              
-            }))
+              try {
+
+              }
+            }));
           } catch (err) {
             console.error(err);
           }
