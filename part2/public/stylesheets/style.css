@@ -199,3 +199,9 @@ h1{
     min-height: 100vh;
     flex-direction: column;
 }
+
+#username:focus, #password:focus {
+  border-color: #ccc;
+  background-color: white;
+  box-shadow: 0 0 5px 5px rgb(231, 228, 228);
+}
