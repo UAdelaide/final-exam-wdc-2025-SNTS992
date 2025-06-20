@@ -78,7 +78,9 @@
             this.dogs = await res.json();
 
             // Random picture for each dog
-            const dogWithPics = await Promise.all(dogsData)
+            const dogWithPics = await Promise.all(dogsData.map(async (dog) => {
+              
+            }))
           } catch (err) {
             console.error(err);
           }
