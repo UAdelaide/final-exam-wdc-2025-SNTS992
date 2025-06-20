@@ -14,6 +14,12 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
+app.use(session({
+  secret: 'a_very_secret_key',  // change this to a strong secret in production
+  resave: false,
+  saveUninitialized: false,
+  cookie: { secure: false } // set secure: true if using HTTPS
+}));
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
