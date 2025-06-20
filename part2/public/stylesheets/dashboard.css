@@ -13,4 +13,6 @@
     border-style: hidden;
 }
 
-.logout button:
+.logout button:hover{
+    background-color: red;
+}
