@@ -12,7 +12,7 @@ const db = mysql.createPool({
 router.get('/', async (req, res) => {
     try {
         const[open] = await db.query(`
-            SELECT wr.request_id, d.name, d.size, u.username As owner_username
+            SELECT wr.request_id, d.name AS dog_name, d.size, u.username AS owner_username
             FROM WalkRequests wr
             JOIN Users u ON d.owner_id = u.user_id
         `);
