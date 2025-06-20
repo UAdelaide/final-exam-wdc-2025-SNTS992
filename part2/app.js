@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 require('dotenv').config();
 const mysql = require('mysql2'); // use mysql in application
+const session = require('express-session'); // use session in appliication
 
 const app = express();
 
