@@ -33,6 +33,28 @@
         </form>
       </div>
     </div>
+    <!-- Dogs Table -->
+    <div v-if="dogs.length > 0" class="mb-4">
+      <h2>All Dogs</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Dog ID</th>
+            <th>Name</th>
+            <th>Size</th>
+            <th>Owner</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="dog in dogs" :key="dog.dog_id">
+            <td>{{ dog.dog_id }}</td>
+            <td>{{ dog.name }}</td>
+            <td>{{ dog.size }}</td>
+            <td>{{ dog.owner_name }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <script>
