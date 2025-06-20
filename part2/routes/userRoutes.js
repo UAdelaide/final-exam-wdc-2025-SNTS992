@@ -57,7 +57,7 @@ router.post('/login', async (req, res) => {
 
       const user = results[0];
 
-      const matched = await bcrypt.compare(password, user.password);
+      const matched = password ===;
 
       if (matched) {
         req.session.user = {
