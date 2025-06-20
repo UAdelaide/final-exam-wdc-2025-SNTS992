@@ -48,6 +48,46 @@ let db;
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             );
         `);
+        await db.execute(`
+            CREATE TABLE IF NOT EXISTS Users (
+                user_id INT AUTO_INCREMENT PRIMARY KEY,
+                username VARCHAR(50) UNIQUE NOT NULL,
+                email VARCHAR(100) UNIQUE NOT NULL,
+                password_hash VARCHAR(255) NOT NULL,
+                role ENUM('owner', 'walker') NOT NULL,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
+        `);
+                await db.execute(`
+            CREATE TABLE IF NOT EXISTS Users (
+                user_id INT AUTO_INCREMENT PRIMARY KEY,
+                username VARCHAR(50) UNIQUE NOT NULL,
+                email VARCHAR(100) UNIQUE NOT NULL,
+                password_hash VARCHAR(255) NOT NULL,
+                role ENUM('owner', 'walker') NOT NULL,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
+        `);
+                await db.execute(`
+            CREATE TABLE IF NOT EXISTS Users (
+                user_id INT AUTO_INCREMENT PRIMARY KEY,
+                username VARCHAR(50) UNIQUE NOT NULL,
+                email VARCHAR(100) UNIQUE NOT NULL,
+                password_hash VARCHAR(255) NOT NULL,
+                role ENUM('owner', 'walker') NOT NULL,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
+        `);
+                await db.execute(`
+            CREATE TABLE IF NOT EXISTS Users (
+                user_id INT AUTO_INCREMENT PRIMARY KEY,
+                username VARCHAR(50) UNIQUE NOT NULL,
+                email VARCHAR(100) UNIQUE NOT NULL,
+                password_hash VARCHAR(255) NOT NULL,
+                role ENUM('owner', 'walker') NOT NULL,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
+        `);
 
         // Insert Users data if table is empty
         const [userRows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
@@ -90,9 +130,9 @@ let db;
             ((SELECT dog_id FROM Dogs WHERE username = 'Lebron'), '2025-06-12 10:00:00', 60, 'Glenelg', 'open');
             `);
         }
-        } catch (err) {
-            console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
-        }
+    } catch (err) {
+        console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
+    }
 })();
 
 app.use(express.static(path.join(__dirname, 'public')));
