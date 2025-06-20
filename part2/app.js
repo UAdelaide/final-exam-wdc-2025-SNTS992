@@ -8,6 +8,7 @@ const pool = mysql.createPool({
     password: '',
     database: 'DogWalkService'
 }).promise();
+
 const app = express();
 
 // Middleware
