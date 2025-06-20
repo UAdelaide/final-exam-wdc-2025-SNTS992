@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Dog Walking Service</title>
@@ -9,13 +10,14 @@
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script src="/workspaces/final-exam-wdc-2025-SNTS992/part2/public/javascripts/page.js"></script>
 </head>
+
 <body class="bg-light">
 
   <div id="app" class="container">
     <h1 class="mb-4 text-primary">{{ message }}</h1>
     <p class="lead">Connect with trusted walkers for your beloved dog!</p>
 
-      <!-- Login -->
+    <!-- Login -->
     <div class="centerBody">
       <div class="login">
         <form id="loginForm">
@@ -45,9 +47,13 @@
   </script>
 
   <script>
-    
+    document.getElementById("loginForm").addEventListener("submit", function (event) {
+      event.preventDefault(); // stops the form from submitting
+      login(); // run your login function
+    });
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
