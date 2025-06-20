@@ -11,7 +11,9 @@ const db = mysql.createPool({
 /* Get list of dogs with their size and owner's username */
 router.get('/', function (req, res) {
     try {
-        const[dogs] = await
+        const[dogs] = await db.query(`
+
+        `)
     }
 });
 
