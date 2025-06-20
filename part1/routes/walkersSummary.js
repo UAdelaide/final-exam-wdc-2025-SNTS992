@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
             SELECT u.username AS walker,
                 COUNT(wr.rating_id) AS total_rating,
                 AVG(wr.rating) AS average_rating
-                COUNT(wa.request_id) AS 
+                COUNT(wa.request_id) AS completed_walks
             FROM Users u
             LEFT JOIN WalkRatings wr ON u.user_id = wr.walker_id
             WHERE u.rolee = 'walker'
