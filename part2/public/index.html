@@ -92,17 +92,6 @@
           } catch (err) {
             console.error(err);
           }
-        },
-        async getDogPic() {
-
-          try {
-            //get a random dog picture
-            const res = await fetch("https://dog.ceo/api/breeds/image/random");
-            const data = await res.json();
-            this.dogImage = data.message;
-          } catch (err) {
-            alert("Dog picture fail to load")
-          }
         }
       },
       mounted() {
