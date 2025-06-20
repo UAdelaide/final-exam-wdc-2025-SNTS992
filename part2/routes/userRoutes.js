@@ -52,7 +52,7 @@ router.post('/login', async (req, res) => {
   try {
     // getting data from database
 
-    req.pool.query(sql, [username], async (err, results) => {
+    const [results] = await db.query('SELECT * FROM Users WHERE username = ?', [username]);
 
       if (results.length === 0) {
         return res.status(401).json({ message: 'Invalid Username or Password!' });
@@ -75,7 +75,7 @@ router.post('/login', async (req, res) => {
       } else {
         res.status(401).json({ message: 'Invalid Username or Password!.' });
       }
-    });
+    );
   } catch (err) {
     console.error('Login Error:', err);
     res.status(500).json({ message: 'Server Error' });
