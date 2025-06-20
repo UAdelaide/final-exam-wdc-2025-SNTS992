@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>asjhdlhoefifh</title> <!--Confusing title for high cognitive load-->
     <link rel="stylesheet" href="/stylesheets/style.css">
-
-    <!--Link from https://v3.router.vuejs.org/guide/#html-->
-    <script src="https://unpkg.com/vue-router@3/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 
 <body>
-    <div id = "app">
+    <div id="app">
         <h1>Click For Dog</h1>
         <p>Dog of the day</p>
-        <div v-if = "dogImage">
-            <img :src="dogImage" height = "300" alt = "Dog">
+        <div v-if="dogImage">
+            <img :src="dogImage" height="300" alt="Dog">
         </div>
     </div>
 
@@ -21,28 +20,29 @@
         const { createApp } = Vue;
 
         createApp({
-            data(){
-                return{
+            data() {
+                return {
                     dogImage: '' //storing image link from API
                 };
             },
             methods: {
                 async getDog() {
 
-                    try{
+                    try {
                         //get a random dog picture
                         const res = await fetch("https://dog.ceo/api/breeds/image/random");
                         const data = await res.json();
                         this.dogImage = data.message;
-                    } catch(err){
-                        alert ("Dog picture fail") // poor handling (bad accessibility)
+                    } catch (err) {
+                        alert("Dog picture fail") // poor handling (bad accessibility)
                     }
                 }
             },
-            mounted(){
+            mounted() {
                 this.getDog(); //get dog picture
             }
         }).mount('#app')
     </script>
 </body>
+
 </html>
