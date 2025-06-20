@@ -13,9 +13,10 @@ router.get('/', async (req, res) => {
     try {
         const[dogs] = await db.query(`
             SELECT
-        `)
+        `);
+        res.json(dogs);
     } catch(err){
-        res.status(500).json({ error });
+        res.status(500).json({ error: err.message });
     }
 });
 
