@@ -51,7 +51,6 @@ router.post('/login', async (req, res) => {
 
   try {
     // getting data from database
-
     const [results] = await db.query('SELECT * FROM Users WHERE username = ?', [username]);
 
       if (results.length === 0) {
