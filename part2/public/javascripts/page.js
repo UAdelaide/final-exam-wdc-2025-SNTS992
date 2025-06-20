@@ -210,7 +210,7 @@ function login(event) {
     xmlhttp.send(JSON.stringify(user));
 }
 
-function logout() {
+function logout(event) {
 
     // Create AJAX Request
     var xmlhttp = new XMLHttpRequest();
