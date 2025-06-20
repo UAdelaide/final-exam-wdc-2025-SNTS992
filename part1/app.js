@@ -135,7 +135,7 @@ let db;
             ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
             ((SELECT dog_id FROM Dogs WHERE name = 'Shaq'), '2025-06-11 08:00:00', 35, 'Adelaide', 'cancelled'),
             ((SELECT dog_id FROM Dogs WHERE name = 'Daisy'), '2025-06-11 09:15:00', 30, 'Norwood', 'completed'),
-            ((SELECT dog_id FROM Dogs WHERE username = 'Lebron'), '2025-06-12 10:00:00', 60, 'Glenelg', 'open');
+            ((SELECT dog_id FROM Dogs WHERE name = 'Lebron'), '2025-06-12 10:00:00', 60, 'Glenelg', 'open');
             `);
         }
     } catch (err) {
