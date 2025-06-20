@@ -58,11 +58,7 @@ router.post('/login', async (req, res) => {
       if (matched) {
         req.session.user = {
           username: user.username,
-          available_funds: user.available_funds,
           email: user.email,
-          firstName: user.firstname,
-          lastName: user.lastname,
-          avatar_url: user.avatar_url,
           role: user.role
         };
         res.status(200).json({ message: 'Login Successful!' });
