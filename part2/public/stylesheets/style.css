@@ -168,12 +168,6 @@ section {
     max-width: 500px;
     height: auto;
     min-height: 500px;
-
-    border-radius: 8px;
-    background-color: whitesmoke;
-    box-shadow: 0 0 8px rgb(255, 255, 255);
-    box-sizing: border-box;
-
     display: flex;
     flex-direction: column;
     justify-content: start;
