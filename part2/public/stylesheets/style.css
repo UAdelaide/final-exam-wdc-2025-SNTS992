@@ -206,3 +206,7 @@ h1{
     min-height: 100vh;
     flex-direction: column;
 }
+
+.dogsTable{
+    margin-top: 10px;
+}
