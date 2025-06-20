@@ -12,7 +12,7 @@
     <div id = "app">
         <h1>Click For Dog</h1>
         <p>Dog of the day</p>
-        <p v-></p>
+        <p v-if = "loading">Loading</p>
         <img :src="dogImage || 'https://via.placeholder.com/300'" height = "300" alt = "Dog">
     </div>
 
