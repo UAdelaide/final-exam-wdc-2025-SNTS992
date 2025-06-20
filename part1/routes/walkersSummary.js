@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
     try {
         const[summary] = await db.query(`
             SELECT u.username AS walker,
-                COUNT(wr.rating_id) AS total_rating,
+                COUNT(DISTINCT wr.rating_id) AS total_rating,
                 AVG(wr.rating) AS average_rating
                 COUNT(DISTINCT wrq.request_id) AS completed_walks
             FROM Users u
