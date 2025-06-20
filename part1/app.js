@@ -44,6 +44,7 @@ let db;
         title VARCHAR(255),
         author VARCHAR(255)
       )
+    
     `);
 
     // Insert data if table is empty
