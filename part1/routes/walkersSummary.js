@@ -8,7 +8,7 @@ const db = mysql.createPool({
     database: 'DogWalkService'
 }).promise();
 
-/* Get list of dogs with their size and owner's username */
+/* Get summary of each walker */
 router.get('/', async (req, res) => {
     try {
         const[dogs] = await db.query(`
