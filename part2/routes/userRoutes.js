@@ -59,7 +59,7 @@ router.post('/login', async (req, res) => {
       const user = results[0];
 
       if (user.password_hash === password) {
-        // Using sessions here, getting the information needed
+        // Using sessions here, storing the information needed
         req.session.user = {
           username: user.username,
           email: user.email,
