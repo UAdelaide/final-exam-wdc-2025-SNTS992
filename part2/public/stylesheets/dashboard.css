@@ -7,5 +7,6 @@
 
 .logout button {
     background-color: rgb(255, 130, 130);
-    color:wheat
+    color:white;
+    padding: 20px;
 }
