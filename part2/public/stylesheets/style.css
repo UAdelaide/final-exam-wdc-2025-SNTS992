@@ -209,7 +209,7 @@ h1{
 
 .dogsTable{
     display: flex;
-    justify-content: ;
+    justify-content: flex-start;
 }
 
 h2{
