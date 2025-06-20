@@ -187,3 +187,8 @@ section {
   font-size: 15px;
   font-weight: 400;
 }
+
+.container{
+    display: flex;
+    justify-content: ;
+}
