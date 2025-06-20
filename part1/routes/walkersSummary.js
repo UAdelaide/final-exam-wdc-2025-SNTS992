@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
             FROM Users u
             LEFT JOIN WalkRatings wr ON u.user_id = wr.walker_id
             WHERE u.rolee = 'walker'
-            GROUP BY u.user
+            GROUP BY u.user_id
         `);
         res.json(summary);
     } catch(err){
