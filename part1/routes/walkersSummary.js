@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
             FROM Users u
             LEFT JOIN WalkRatings wr ON u.user_id = wr.walker_id
             LEFT JOIN WalkApplications wa ON u.user_id = wa.walker_id
-            LEFT JOIN WalkRequests completed_wr ON wa.request_id = completed_wr.request_id AND completed_wr.status = 'completed'
+            LEFT JOIN WalkRequests wrq ON wa.request_id = wrq.request_id AND wr.status = 'completed'
             WHERE u.role = 'walker'
             GROUP BY u.user_id;
         `);
