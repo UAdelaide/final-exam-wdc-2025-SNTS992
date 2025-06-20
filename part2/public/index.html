@@ -84,7 +84,7 @@
                 const picData = await picRes.json();
                 dog.picture = picData.message; // add picture link
               } catch {
-                dog.picture = 
+                dog.picture = 'https://via.placeholder.com/100?text=No+Image'; // Error case
               }
               return dog;
             }));
