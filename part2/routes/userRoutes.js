@@ -51,6 +51,7 @@ router.post('/login', async (req, res) => {
 
   try {
     // getting data from database
+
     req.pool.query(sql, [username], async (err, results) => {
 
       if (results.length === 0) {
