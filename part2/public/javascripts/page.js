@@ -192,7 +192,7 @@ function login() {
 
                 // Redirect based on role
                 if (data.role === 'owner') {
-                    window.location.href = '/owner-dashboard';
+                    window.location.href = '/owner-dashboard.html';
                 } else if (data.role === 'walker') {
                     window.location.href = '/walker-dashboard';
                 }
