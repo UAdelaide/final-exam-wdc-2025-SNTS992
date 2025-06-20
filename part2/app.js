@@ -1,7 +1,13 @@
 const express = require('express');
 const path = require('path');
 require('dotenv').config();
-
+const mysql = require('mysql2'); // use mysql in application
+const db = mysql.createPool({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'DogWalkService'
+}).promise();
 const app = express();
 
 // Middleware
