@@ -1,6 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../models/db');
+const mysql = require('mysql2'); // use mysql in application
+const db = mysql.createPool({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'DogWalkService'
+}).promise();
 
 // GET all users (for admin/testing)
 router.get('/', async (req, res) => {
