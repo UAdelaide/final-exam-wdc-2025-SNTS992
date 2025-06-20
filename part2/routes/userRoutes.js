@@ -88,7 +88,7 @@ router.post('/logout', (res, req) => {
       console.error('Logout Error:', err);
       return res.status(500).json({ message: "Logout Failed" });
     }
-    res.json
+    res.json({ message: "Logout Successfully" });
   });
 });
 module.exports = router;
