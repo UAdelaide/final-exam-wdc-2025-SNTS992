@@ -150,6 +150,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/', dogsRouter);
+app.use('/api/dogs', dogsRouter);
+app.use('/api/dogs', openRouter);
+app.use('/api/dogs', dogsRouter);
 
 module.exports = app;
