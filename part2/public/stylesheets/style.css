@@ -157,12 +157,6 @@ section {
     display: none;
 }
 
-.login {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-}
-
 .centerBody {
     width: 90%;
     max-width: 500px;
