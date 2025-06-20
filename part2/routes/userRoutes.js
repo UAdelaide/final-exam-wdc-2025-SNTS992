@@ -38,7 +38,7 @@ router.get('/me', (req, res) => {
 // POST login
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
-  // 
+  // Ensuring blank is filled in login
   if (!username || !password) {
     return res.status(400).json({ message: 'Username and Password are required.' });
   }
