@@ -211,7 +211,7 @@ function login(event) {
 }
 
 function logout(event) {
-
+     event.preventDefault();
     // Create AJAX Request
     var xmlhttp = new XMLHttpRequest();
 
