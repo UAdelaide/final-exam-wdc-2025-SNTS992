@@ -18,6 +18,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Get dogs under the same owner
 router.get('/owner/dogs', async (req, res) => {
   try {
     const ownerId = req.session.user?.user_id;
