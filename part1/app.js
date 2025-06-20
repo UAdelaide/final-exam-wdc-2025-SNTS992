@@ -7,8 +7,8 @@ var mysql = require('mysql2/promise');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var dogsRouter = require('./routes/dogs');
-var dogsRouter = require('./routes/dogs');
-var dogsRouter = require('./routes/dogs');
+var openRouter = require('./routes/openRequests');
+var summaryRouter = require('./routes/dogs');
 
 var app = express();
 
