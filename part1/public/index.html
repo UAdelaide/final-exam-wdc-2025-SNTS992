@@ -39,10 +39,11 @@
                     } catch(err){
                         alert ("Dog picture fail") // poor handling (bad accessibility)
                     }
-                    
+
+                    this.loading = false;
                 }
             }
-        })
+        }).mount('#app')
     </script>
 </body>
 </html>
