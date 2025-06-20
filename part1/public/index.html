@@ -23,13 +23,13 @@
         createApp({
             data(){
                 return{
-                    dogImage: '', 
+                    dogImage: '', //storing image link from API
                     loading: false
                 }
             },
             method: {
                 async getDog() {
-
+                    this.loading = true
                 }
             }
         })
