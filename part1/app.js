@@ -34,7 +34,7 @@ let db;
       host: 'localhost',
       user: 'root',
       password: '',
-      database: 'dogwalks'
+      database: 'DogWalksService'
     });
 
     // Create a table if it doesn't exist
@@ -44,7 +44,7 @@ let db;
         title VARCHAR(255),
         author VARCHAR(255)
       )
-    
+
     `);
 
     // Insert data if table is empty
