@@ -110,6 +110,19 @@ router.post('/logout', (req, res) => {
   });
 });
 
-//g
+// Get dogs table
+router.get('/dogs', async (req, res) => {
+  try {
+    const [dogs] = await db.query(`
+      SELECT d.dog_id, d.name, d.size, u.username as owner_name
+      FROM Dogs d
+      JOIN Users u ON d.owner_id = u.user_id
+    `);
+    res.json(dogs);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to fetch dogs' });
+  }
+});
 
 module.exports = router;
