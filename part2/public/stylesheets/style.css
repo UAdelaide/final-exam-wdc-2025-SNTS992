@@ -190,5 +190,6 @@ section {
 
 .container{
     display: flex;
-    justify-content: ;
+    justify-content: center;
+    align-items: center;
 }
