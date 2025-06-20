@@ -9,7 +9,7 @@ const db = mysql.createPool({
 }).promise();
 
 /* Get list of dogs with their size and owner's username */
-router.get('/', function (req, res) {
+router.get('/', async (req, res) => {
     try {
         const[dogs] = await db.query(`
             SELECT
