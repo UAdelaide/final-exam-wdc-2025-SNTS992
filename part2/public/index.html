@@ -89,7 +89,7 @@
             const data = await res.json();
             this.dogImage = data.message;
           } catch (err) {
-            alert("Dog picture fail") // poor handling (bad accessibility)
+            alert("Dog picture fail to load")
           }
         }
       },
