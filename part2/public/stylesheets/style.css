@@ -215,13 +215,10 @@ h1 {
 }
 
 .dogsTable th {
-    background-color: #007bff;
-    /* Bootstrap primary blue */
     color: white;
     text-align: center;
     font-weight: 600;
     padding: 12px 15px;
-    border-bottom: 3px solid #0056b3;
     letter-spacing: 0.05em;
     text-transform: uppercase;
 }
