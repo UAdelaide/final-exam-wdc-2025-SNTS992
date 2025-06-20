@@ -94,8 +94,8 @@ let db;
         `);
 
         // Insert Users data if table is empty
-        const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
-        if (rows[0].count === 0) {
+        const [userRows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
+        if (userRows[0].count === 0) {
             await db.execute(`
             INSERT INTO Users (username, email, password_hash, role)
             VALUES
@@ -106,6 +106,7 @@ let db;
             ('kevpat', 'kevinpatel@example.com', 'hashed888', 'owner');
             `);
         }
+        
         } catch (err) {
             console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
         }
