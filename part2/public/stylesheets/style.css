@@ -71,7 +71,7 @@ footer h4 {
 }
 
 .post .date
-    float right;
+    float: right;
 }
 
 .tag {
