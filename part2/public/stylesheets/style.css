@@ -154,3 +154,9 @@ textarea {
 section {
     display: none;
 }
+
+.login{
+  display: flex;
+  flex-direction: column;
+  width: 375px;
+}
