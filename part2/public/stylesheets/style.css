@@ -157,6 +157,10 @@ section {
     display: none;
 }
 
+h1{
+    
+}
+
 .login {
     display: flex;
     flex-direction: column;
