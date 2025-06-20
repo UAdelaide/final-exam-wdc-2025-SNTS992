@@ -90,7 +90,7 @@
             error.value = 'Could not determine current user';
           }
         }
-        onMounted(() => {
+        onMounted(async() => {
           await loadWalkRequests();
         });
 
