@@ -13,8 +13,9 @@
   <div id="app" class="container py-5">
     <h1 class="mb-4 text-primary">{{ message }}</h1>
     <p class="lead">Connect with trusted walkers for your beloved dog!</p>
-    
+
       <!-- Login -->
+    <div>
       <form onsubmit="return handleLogin(event)">
 
         <label for="Username">Username</label>
@@ -26,6 +27,7 @@
 
         <button type="submit" id="loginButton">Login</button>
       </form>
+    </div>
   </div>
 
   <script>
