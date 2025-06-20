@@ -2,4 +2,7 @@
     background-color: rgb(255, 91, 91);
     color: white;
     padding: 20px;
+    display: flex;
+    justify-content: end;
+    
 }
