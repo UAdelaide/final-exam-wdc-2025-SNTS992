@@ -57,7 +57,7 @@ router.post('/login', async (req, res) => {
 
       const user = results[0];
 
-      const matched =;
+      const matched = users.find(user => user.username === username && user.password === password);
 
       if (matched) {
         req.session.user = {
