@@ -50,15 +50,14 @@ let db;
         `);
         await db.execute(`
             CREATE TABLE IF NOT EXISTS Users (
-                user_id INT AUTO_INCREMENT PRIMARY KEY,
-                username VARCHAR(50) UNIQUE NOT NULL,
-                email VARCHAR(100) UNIQUE NOT NULL,
-                password_hash VARCHAR(255) NOT NULL,
-                role ENUM('owner', 'walker') NOT NULL,
-                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                dog_id INT AUTO_INCREMENT PRIMARY KEY,
+    owner_id INT NOT NULL,
+    name VARCHAR(50) NOT NULL,
+    size ENUM('small', 'medium', 'large') NOT NULL,
+    FOREIGN KEY (owner_id) REFERENCES Users(user_id)
             );
         `);
-                await db.execute(`
+        await db.execute(`
             CREATE TABLE IF NOT EXISTS Users (
                 user_id INT AUTO_INCREMENT PRIMARY KEY,
                 username VARCHAR(50) UNIQUE NOT NULL,
@@ -68,7 +67,7 @@ let db;
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             );
         `);
-                await db.execute(`
+        await db.execute(`
             CREATE TABLE IF NOT EXISTS Users (
                 user_id INT AUTO_INCREMENT PRIMARY KEY,
                 username VARCHAR(50) UNIQUE NOT NULL,
@@ -78,7 +77,7 @@ let db;
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             );
         `);
-                await db.execute(`
+        await db.execute(`
             CREATE TABLE IF NOT EXISTS Users (
                 user_id INT AUTO_INCREMENT PRIMARY KEY,
                 username VARCHAR(50) UNIQUE NOT NULL,
