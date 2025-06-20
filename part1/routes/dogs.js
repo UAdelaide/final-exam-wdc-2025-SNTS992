@@ -14,6 +14,8 @@ router.get('/', async (req, res) => {
         const[dogs] = await db.query(`
             SELECT
         `)
+    } catch(err){
+        res
     }
 });
 
