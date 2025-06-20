@@ -8,7 +8,7 @@ const db = mysql.createPool({
     database: 'DogWalkService'
 }).promise();
 
-/* GET users listing. */
+/* Get */
 router.get('/', function (req, res, next) {
     res.send('respond with a resource');
 });
