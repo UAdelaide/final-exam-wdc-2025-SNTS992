@@ -193,7 +193,7 @@ h1{
 }
 
 #username:focus, #password:focus {
-  border-color: rgb(0, 174, 255);
+  border-color: rgb(0, 162, 255);
   background-color: white;
   box-shadow: 0 0 20px 4px rgba(0, 162, 255, 0.3);
 }
