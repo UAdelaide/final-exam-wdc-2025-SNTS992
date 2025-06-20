@@ -131,10 +131,10 @@ let db;
             await db.execute(`
             INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
             VALUES
-            ((SELECT dog_id FROM Dogs WHERE username = 'Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
-            ((SELECT dog_id FROM Dogs WHERE username = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
-            ((SELECT dog_id FROM Dogs WHERE username = 'Shaq'), '2025-06-11 08:00:00', 35, 'Adelaide', 'cancelled'),
-            ((SELECT dog_id FROM Dogs WHERE username = 'Daisy'), '2025-06-11 09:15:00', 30, 'Norwood', 'completed'),
+            ((SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
+            ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
+            ((SELECT dog_id FROM Dogs WHERE name = 'Shaq'), '2025-06-11 08:00:00', 35, 'Adelaide', 'cancelled'),
+            ((SELECT dog_id FROM Dogs WHERE name = 'Daisy'), '2025-06-11 09:15:00', 30, 'Norwood', 'completed'),
             ((SELECT dog_id FROM Dogs WHERE username = 'Lebron'), '2025-06-12 10:00:00', 60, 'Glenelg', 'open');
             `);
         }
