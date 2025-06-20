@@ -211,9 +211,24 @@ function login(event) {
 }
 
 function logout(event) {
-     event.preventDefault();
+    event.preventDefault();
     // Create AJAX Request
     var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState === 4) {
+            if (this.status === 200) {
+                alert("You have been logged out.");
+                window.location.href = "/"; // Redirect to login page
+            } else {
+                try {
+                    const err = JSON.parse(this.responseText);
+                    alert("Logout failed: " + err.message);
+                } catch (e) {
+                    alert("Logout failed due to unexpected error.");
+                }
+            }
+        }
+    };
 
     // Open connection to server & send the post data using a POST request
     xmlhttp.open("POST", "/api/users/logout", true);
