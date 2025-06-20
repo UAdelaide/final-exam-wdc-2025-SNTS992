@@ -37,8 +37,9 @@
                         const data = await res.json();
                         this.dogImage = data.message;
                     } catch(err){
-                        alert ("Dog picture fail") // 
+                        alert ("Dog picture fail") // poor handling (bad accessibility)
                     }
+                    
                 }
             }
         })
