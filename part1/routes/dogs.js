@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
             SELECT
         `)
     } catch(err){
-        res
+        res.status(500).json({ error });
     }
 });
 
