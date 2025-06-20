@@ -18,6 +18,23 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/owner/dogs', async (req, res) => {
+  try {
+    const ownerId = req.session.user?.user_id;
+    if (!ownerId) return res.status(401).json({ error: 'Unauthorized' });
+
+    const [dogs] = await db.query(
+      'SELECT dog_id, name FROM Dogs WHERE owner_id = ?',
+      [ownerId]
+    );
+
+    res.json({ dogs });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to fetch dogs' });
+  }
+});
+
 // POST a new user (simple signup)
 router.post('/register', async (req, res) => {
   const { username, email, password, role } = req.body;
@@ -90,23 +107,6 @@ router.post('/logout', (req, res) => {
     }
     res.json({ message: "Logged Out Successfully" });
   });
-});
-
-router.get('/owner/dogs', async (req, res) => {
-  try {
-    const ownerId = req.session.user?.user_id;
-    if (!ownerId) return res.status(401).json({ error: 'Unauthorized' });
-
-    const [dogs] = await db.query(
-      'SELECT dog_id, name FROM Dogs WHERE owner_id = ?',
-      [ownerId]
-    );
-
-    res.json({ dogs });
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'Failed to fetch dogs' });
-  }
 });
 
 module.exports = router;
