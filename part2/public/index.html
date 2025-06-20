@@ -36,6 +36,12 @@
   </div>
 
   <script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent page reload
+      login(); // Call login function
+    });
+  </script>
+  <script>
     const { createApp } = Vue;
     createApp({
       data() {
