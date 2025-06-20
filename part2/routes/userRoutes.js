@@ -51,12 +51,7 @@ router.post('/login', async (req, res) => {
 
   try {
     // getting data from database
-    const sql = 'SELECT * FROM Users WHERE username = ?';
-    req.pool.query(sql, [username], async (err, results) => {
-      if (err) {
-        console.error('Database error during login:', err);
-        return res.status(500).json({ message: 'Server error ' });
-      }
+    const [results] = await db.query('SELECT * FROM Users WHERE username = ?', [username]);
 
       if (results.length === 0) {
         return res.status(401).json({ message: 'Invalid Username or Password!' });
