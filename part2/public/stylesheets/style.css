@@ -157,7 +157,7 @@ section {
     display: none;
 }
 
-h1{
+h1 {
     margin-top: 50px;
     font-weight: 600;
 }
@@ -180,26 +180,28 @@ h1{
     position: relative;
 }
 
-#username, #password {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 12px;
-  margin-top: 15px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  outline: none;
-  font-size: 15px;
-  font-weight: 400;
+#username,
+#password {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    outline: none;
+    font-size: 15px;
+    font-weight: 400;
 }
 
-#username:focus, #password:focus {
-  border-color: rgb(0, 162, 255);
-  background-color: white;
-  box-shadow: 0 0 20px 4px rgba(0, 162, 255, 0.3);
+#username:focus,
+#password:focus {
+    border-color: rgb(0, 162, 255);
+    background-color: white;
+    box-shadow: 0 0 20px 4px rgba(0, 162, 255, 0.3);
 }
 
-.container{
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -207,15 +209,23 @@ h1{
     flex-direction: column;
 }
 
-.dogsTable{
+.dogsTable {
     margin-top: 20px;
     padding: 15px;
 }
 
 .dogsTable th {
-    
+    background-color: #007bff;
+    /* Bootstrap primary blue */
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    padding: 12px 15px;
+    border-bottom: 3px solid #0056b3;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
-h2{
+h2 {
     font-weight: 600;
 }
