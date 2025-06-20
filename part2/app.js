@@ -2,12 +2,6 @@ const express = require('express');
 const path = require('path');
 require('dotenv').config();
 const mysql = require('mysql2'); // use mysql in application
-const pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'DogWalkService'
-}).promise();
 
 const app = express();
 
@@ -15,11 +9,18 @@ const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(session({
-  secret: 'Curry', // change this to a strong secret in production
+  secret: 'Curry',
   resave: false,
   saveUninitialized: false,
   cookie: { secure: false } // true if using HTTPS
 }));
+
+const pool = mysql.createPool({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'DogWalkService'
+}).promise();
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
