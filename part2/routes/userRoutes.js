@@ -57,7 +57,7 @@ router.post('/login', async (req, res) => {
 
       const user = results[0];
 
-      if (user.password ) {
+      if (user.password === password) {
         req.session.user = {
           username: user.username,
           email: user.email,
