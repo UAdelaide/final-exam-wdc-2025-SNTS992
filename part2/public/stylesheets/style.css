@@ -157,6 +157,12 @@ section {
     display: none;
 }
 
+.login {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
 .centerBody {
     width: 90%;
     max-width: 500px;
@@ -187,4 +193,5 @@ section {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    flex-direction: column;
 }
