@@ -61,6 +61,7 @@ router.post('/login', async (req, res) => {
         // Using sessions here, getting the information needed
         req.session.user = {
           username: user.username,
+          email: user.email,
           role: user.role
         };
         res.status(200).json({ message: 'Login Successful!' });
