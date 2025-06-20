@@ -125,7 +125,7 @@ let db;
             `);
         }
 
-        // Insert Dogs data if table is empty
+        // Insert WalkRequests data if table is empty
         const [walkRows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
         if (walkRows[0].count === 0) {
             await db.execute(`
