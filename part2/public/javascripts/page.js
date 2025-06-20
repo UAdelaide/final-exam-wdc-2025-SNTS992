@@ -173,7 +173,7 @@ function downvote(index) {
     updatePosts();
 }
 
-function login(event) {
+function login() {
 
     let user = {
         username: document.getElementById('username').value,
