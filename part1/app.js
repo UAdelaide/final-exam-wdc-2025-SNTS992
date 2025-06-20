@@ -26,7 +26,7 @@ let db;
     });
 
     // Create the database if it doesn't exist
-    await connection.query('CREATE DATABASE IF NOT EXISTS DogWalksService');
+    await connection.query('CREATE DATABASE IF NOT EXISTS DogWalkService');
     await connection.end();
 
     // Connect to the created database
@@ -34,7 +34,7 @@ let db;
       host: 'localhost',
       user: 'root',
       password: '',
-      database: 'DogWalksService'
+      database: 'DogWalkService'
     });
 
     // Create a table if it doesn't exist
