@@ -11,12 +11,12 @@ const db = mysql.createPool({
 /* Get summary of each walker */
 router.get('/', async (req, res) => {
     try {
-        const[dogs] = await db.query(`
+        const[summary] = await db.query(`
             SELECT d.dog_id, d.name, d.size, u.username As owner_username
             FROM Dogs d
             JOIN Users u ON d.owner_id = u.user_id
         `);
-        res.json(dogs);
+        res.json(summary);
     } catch(err){
         res.status(500).json({ error: err.message });
     }
