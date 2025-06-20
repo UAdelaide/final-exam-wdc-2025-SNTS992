@@ -9,7 +9,7 @@ const db = mysql.createPool({
 }).promise();
 
 /* Get list of dogs with their size and owner's username */
-router.get('/', function (req, res, next) {
+router.get('/', function (req, res) {
     res.send('respond with a resource');
 });
 
