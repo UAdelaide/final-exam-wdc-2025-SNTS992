@@ -38,10 +38,12 @@ router.get('/me', (req, res) => {
 // POST login (dummy version)
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
-    if (!username || !password) {
+
+  if (!username || !password) {
     return res.status(400).json({ message: 'Username and Password are required.' });
   }
-    try {
+
+  try {
     const sql = 'SELECT * FROM players WHERE username = ?';
     req.pool.query(sql, [username], async (err, results) => {
       if (err) {
