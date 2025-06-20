@@ -1,8 +1,8 @@
-.logout{
+.logout {
     background-color: rgb(255, 91, 91);
     color: white;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 1000; /* Make sure it stays on top */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000; /* Make sure it stays on top */
 }
