@@ -39,19 +39,40 @@ router.get('/me', (req, res) => {
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
-  try {
-    const [rows] = await db.query(`
-      SELECT user_id, username, role FROM Users
-      WHERE username = ? AND password_hash = ?
-    `, [username, password]);
+    try {
+    const sql = 'SELECT * FROM players WHERE username = ?';
+    req.pool.query(sql, [username], async (err, results) => {
+      if (err) {
+        console.error('Database error during login:', err);
+        return res.status(500).json({ message: 'Server error ' });
+      }
 
-    if (rows.length === 0) {
-      return res.status(401).json({ error: 'Invalid credentials' });
-    }
+      if (results.length === 0) {
+        return res.status(401).json({ message: 'Invalid Username or Password!' });
+      }
 
-    res.json({ message: 'Login successful', user: rows[0] });
-  } catch (error) {
-    res.status(500).json({ error: 'Login failed' });
+      const user = results[0];
+
+      const matched = await bcrypt.compare(password, user.password);
+
+      if (matched) {
+        req.session.user = {
+          username: user.username,
+          available_funds: user.available_funds,
+          email: user.email,
+          firstName: user.firstname,
+          lastName: user.lastname,
+          avatar_url: user.avatar_url,
+          role: user.role
+        };
+        res.status(200).json({ message: 'Login Successful!' });
+      } else {
+        res.status(401).json({ message: 'Invalid Username or Password!.' });
+      }
+    });
+  } catch (err) {
+    console.error('Login Error:', err);
+    res.status(500).json({ message: 'Server Error' });
   }
 });
 
