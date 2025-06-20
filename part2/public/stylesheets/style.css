@@ -208,7 +208,8 @@ h1{
 }
 
 .dogsTable{
-    display 
+    display: flex;
+    justify-content: ;
 }
 
 h2{
