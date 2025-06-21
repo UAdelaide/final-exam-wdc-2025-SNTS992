@@ -109,7 +109,8 @@ router.post('/logout', (req, res) => {
     // Clear cookie seesion
     res.clearCookie('connect.sid', {
       path: '/',
-      httpOnly
+      httpOnly: true,
+      secure: 
     })
 
     res.json({ message: "Logged Out Successfully" });
