@@ -25,7 +25,7 @@ router.get('/', async (req, res) => {
         `);
         res.json(summary);
     } catch(err){
-        res.status(500).json({ error: err.message });
+        res.status(500).json({ error: 'Database failed to load' });
     }
 });
 
