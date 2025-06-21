@@ -107,10 +107,10 @@ router.post('/logout', (req, res) => {
       return res.status(500).json({ message: "Logout Failed" });
     }
     // Clear cookie seesion
-    res.clearCookie('connect.sid', { // default
+    res.clearCookie('connect.sid', { // Connect.sid is the default cookie session
       path: '/',
       httpOnly: true,
-      secure: false
+      secure: false  // Set to 
     });
 
     res.json({ message: "Logged Out Successfully" });
